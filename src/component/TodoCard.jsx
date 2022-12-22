@@ -12,22 +12,22 @@ export default function TodoCard () {
         todoService.getTodoByUser("selimkkkaraca@hotmail.com").then((result) => setTodos(result.data));
     }, []);
 
-    let updateTodoDoneStatus = (status, publicId, newStatus) => {
+    let updateTodoDoneStatus = (status, publicId) => {
 
         if (status) {
-            newStatus = false;
-            todoService.updateTodoDoneStatus(publicId, newStatus);
+            status = false;
+            todoService.updateTodoDoneStatus(publicId, status);
         } else {
-            newStatus = true;
-            todoService.updateTodoDoneStatus(publicId, newStatus);
+            status = true;
+            todoService.updateTodoDoneStatus(publicId, status);
         }
 
     }
 
-
     return(
 
         todos.map((todo) => (
+
                 <Card>
                     <Image src={todo.imageUrl} wrapped ui={false} />
                     <Card.Content>
@@ -42,8 +42,8 @@ export default function TodoCard () {
                     <Card.Content extra>
                         <a>
                             <Button color='red' onClick={() => todoService.deleteTodo(todo.publicId)}><Icon name='trash alternate'/></Button>
-                            <Label>
-                                <Checkbox checked={todo.done} label="Done" onChange={() => updateTodoDoneStatus(todo.done, todo.publicId, null)}></Checkbox>
+                            <Label color='blue'>
+                                <Checkbox checked={todo.done} label="Is It Done" onChange={() => updateTodoDoneStatus(todo.done, todo.publicId)}></Checkbox>
                             </Label>
                             {/*TODO fix checked*/}
 

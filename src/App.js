@@ -1,6 +1,7 @@
 import './App.css';
 import TodoCard from "./component/TodoCard";
 import MenuBar from "./component/MenuBar";
+import SaveTodoForm from "./component/SaveTodoForm";
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
   return (
       <div>
           <MenuBar/>
-        <TodoCard/>
+          <SaveTodoForm/>
+          <TodoCard/>
       </div>
   );
 }
