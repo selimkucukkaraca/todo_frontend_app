@@ -1,4 +1,4 @@
-import {Button, Card, Icon, Image} from 'semantic-ui-react'
+import {Button, Card, Checkbox, Icon, Image, Input, Label} from 'semantic-ui-react'
 import {useEffect, useState} from "react";
 import TodoService from "../service/TodoService";
 
@@ -17,7 +17,7 @@ export default function TodoCard () {
 
         todos.map((todo) => (
                 <Card>
-                    <Image src='https://www.mediaclick.com.tr/uploads/2018/08/java.png' wrapped ui={false} />
+                    <Image src={todo.imageUrl} wrapped ui={false} />
                     <Card.Content>
                         <Card.Header>{todo.title}</Card.Header>
                         <Card.Meta>
@@ -29,7 +29,12 @@ export default function TodoCard () {
                     </Card.Content>
                     <Card.Content extra>
                         <a>
-                            <Button onClick={() => todoService.deleteTodo(todo.publicId)}><Icon name='trash alternate' /></Button>
+                            <Button color='red' onClick={() => todoService.deleteTodo(todo.publicId)}><Icon name='trash alternate'/></Button>
+                            <Label>
+                                <Checkbox label="Done" onChange={() => todoService.updateTodoDoneStatus(todo.publicId, true)}></Checkbox>
+                            </Label>
+                            {/*TODO fix checked*/}
+
                         </a>
                     </Card.Content>
                 </Card>

@@ -10,11 +10,12 @@ export default class UserService{
         return axios.delete("http://localhost:8080/api/v1/user?mail=" + mail);
     }
 
-    save(username, password, mail) {
+    save(username, password, mail, imageUrl) {
         return axios.post("http://localhost:8080/api/v1/user", {
             username: username,
             password: password,
-            mail: mail
+            mail: mail,
+            imageUrl: imageUrl
         })
     }
 

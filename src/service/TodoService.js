@@ -10,11 +10,17 @@ export default class TodoService{
         return axios.delete("http://localhost:8080/api/v1/todo?publicId=" + publicId);
     }
 
-    saveTodo(title, body, userMail) {
+    saveTodo(title, body, userMail, imageUrl) {
         return axios.post("http://localhost:8080/api/v1/todo", {
             title: title,
             body: body,
-            userMail: userMail
+            userMail: userMail,
+            imageUrl: imageUrl
         })
     }
+
+    updateTodoDoneStatus(publicId, status) {
+        return axios.put("http://localhost:8080/api/v1/todo/update-done-status?publicId=" + publicId + "&status=" + status);
+    }
+
 }
