@@ -24,7 +24,7 @@ export default class UserService{
     }
 
     activateUser(mail, code) {
-        return axios.patch("http://localhost:8080/api/v1/user/activate-user?mail=" + mail + "?code=" + code);
+        return axios.patch("http://localhost:8080/api/v1/user/activate-user?mail=" + mail + "&code=" + code);
     }
 
     deactivateUser(mail){

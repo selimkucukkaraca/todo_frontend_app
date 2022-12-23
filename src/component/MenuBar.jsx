@@ -6,7 +6,7 @@ export default function MenuBar () {
     return(
         <Menu inverted>
             <Menu.Item
-                name='home'
+                name='Home'
             />
             <Menu.Item
                 name='messages'
