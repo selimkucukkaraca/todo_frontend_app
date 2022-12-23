@@ -30,4 +30,12 @@ export default class UserService{
     deactivateUser(mail){
         return axios.patch("http://localhost:8080/api/v1/user/deactivate-user?mail=" + mail);
     }
+
+    login(mail, password){
+        return axios.post("http://localhost:8080/api/v1/user/login", {
+            mail: mail,
+            password: password
+        })
+    }
+
 }
