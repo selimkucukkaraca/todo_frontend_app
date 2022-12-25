@@ -45,7 +45,7 @@ export default function TodoCard () {
                             <Label color='blue'>
                                 <Checkbox checked={todo.done} label="Is It Done" onChange={() => updateTodoDoneStatus(todo.done, todo.publicId)}></Checkbox>
                             </Label>
-                            {/*TODO fix checked*/}
+                            <Button icon="clone" onClick={() => todoService.clone(todo.publicId)}></Button>
 
                         </a>
                     </Card.Content>

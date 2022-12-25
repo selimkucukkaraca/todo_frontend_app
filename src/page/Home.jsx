@@ -7,7 +7,9 @@ export default function Home() {
 
     return (
         <div>
-            <LoginForm/>
+            <MenuBar/>
+            <SaveTodoForm/>
+            <TodoCard/>
         </div>
 
     );
