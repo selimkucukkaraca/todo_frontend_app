@@ -1,16 +1,16 @@
 import MenuBar from "../component/MenuBar";
 import SaveTodoForm from "../component/SaveTodoForm";
 import TodoCard from "../component/TodoCard";
-import LoginForm from "../component/LoginForm";
 
-export default function Home() {
+export default function Home(props) {
+
+    let propsMail = "selimkkkaraca@hotmail.com";
 
     return (
         <div>
             <MenuBar/>
-            <SaveTodoForm/>
-            <TodoCard/>
+            <SaveTodoForm mail={propsMail}/>
+            <TodoCard mail={propsMail}/>
         </div>
-
     );
 }

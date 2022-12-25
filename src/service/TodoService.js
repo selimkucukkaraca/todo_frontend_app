@@ -23,8 +23,11 @@ export default class TodoService{
         return axios.put("http://localhost:8080/api/v1/todo/update-done-status?publicId=" + publicId + "&status=" + status);
     }
 
-    clone(publicId) {
-        return axios.post("http://localhost:8080/api/v1/todo/clone?publicId=" + publicId);
+    cloneTodo(publicId) {
+        return axios.post("http://localhost:8080/api/v1/todo/clone?publicId=" + publicId)
     }
 
+    getByPublicId(publicId) {
+        return axios.get("http://localhost:8080/api/v1/todo/get-by-public-id/" + publicId);
+    }
 }
