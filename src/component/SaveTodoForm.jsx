@@ -2,7 +2,7 @@ import {Button, Form, Grid} from 'semantic-ui-react'
 import TodoService from "../service/TodoService";
 
 
-export default function SaveTodoForm() {
+export default function SaveTodoForm(props) {
 
     let todoService = new TodoService();
 
@@ -34,7 +34,7 @@ export default function SaveTodoForm() {
                             <input id="imageUrl" placeholder='Image Url'/>
                         </Form.Field>
 
-                         <Button className="save-button" color='blue' onClick={() => save("selimkkkaraca@hotmail.com")}
+                         <Button className="save-button" color='blue' onClick={() => save(props.mail)}
                                     type='submit'>Save</Button>
 
                     </Form>
