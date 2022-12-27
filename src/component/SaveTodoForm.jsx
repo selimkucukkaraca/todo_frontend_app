@@ -4,15 +4,15 @@ import TodoService from "../service/TodoService";
 
 export default function SaveTodoForm(props) {
 
-    let todoService = new TodoService();
+    const todoService = new TodoService();
 
-    let save = (userMail) => {
-        let inputTitle = document.getElementById("title").value;
-        let inputBody = document.getElementById("body").value;
-        let inputImageUrl = document.getElementById("imageUrl").value;
+    const save = (userMail) => {
+        const inputTitle = document.getElementById("title").value;
+        const inputBody = document.getElementById("body").value;
+        const inputImageUrl = document.getElementById("imageUrl").value;
+        const completionDate = document.getElementById('completionDate').value;
 
-
-        todoService.saveTodo(inputTitle, inputBody, userMail, inputImageUrl);
+        todoService.saveTodo(inputTitle, inputBody, userMail, inputImageUrl, completionDate);
     }
 
     return (
@@ -32,6 +32,10 @@ export default function SaveTodoForm(props) {
                         <Form.Field>
                             <label>Image Url</label>
                             <input id="imageUrl" placeholder='Image Url'/>
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Completion Date</label>
+                            <input id="completionDate" placeholder='Completion Date'/>
                         </Form.Field>
 
                          <Button className="save-button" color='blue' onClick={() => save(props.mail)}

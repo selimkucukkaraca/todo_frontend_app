@@ -1,23 +1,19 @@
 import {Button, Form, Grid} from "semantic-ui-react";
 import UserService from "../service/UserService";
 import {useState} from "react";
-import {Link} from "react-router-dom";
-import Home from "../page/Home";
+
 
 export default function LoginForm() {
 
-    const [loginUser, setUser] = useState("");
-
-    let userService = new UserService();
+    const [loginUser,setUser] = useState("");
+    const userService = new UserService();
 
     let login = () => {
-        let inputMail = document.getElementById("mail").value;
-        let inputPassword = document.getElementById("password").value;
+        const inputMail = document.getElementById("mail").value;
+        const inputPassword = document.getElementById("password").value;
 
-        let user = userService.login(inputMail, inputPassword);
-
+        const user = userService.login(inputMail, inputPassword);
         user.then((result) => setUser(result.data));
-
         console.warn(loginUser);
     }
 

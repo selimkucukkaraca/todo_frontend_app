@@ -1,4 +1,3 @@
-import MenuBar from "../component/MenuBar";
 import SaveTodoForm from "../component/SaveTodoForm";
 import TodoCard from "../component/TodoCard";
 
@@ -8,7 +7,6 @@ export default function Home(props) {
 
     return (
         <div>
-            <MenuBar/>
             <SaveTodoForm mail={propsMail}/>
             <TodoCard mail={propsMail}/>
         </div>

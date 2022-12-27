@@ -45,6 +45,7 @@ export default function TodoCard(props) {
                         {todo.body}
                     </Card.Description>
                 </Card.Content>
+                <Label>Completion Date: {todo.completionDate}</Label>
                 <Card.Content extra>
                     <a>
                         <Button color='red' onClick={() => todoService.deleteTodo(todo.publicId)}><Icon
